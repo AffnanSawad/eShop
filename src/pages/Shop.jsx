@@ -1,10 +1,34 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux/CardSlice";
+import Swal from "sweetalert2";
 
 
 const Shop = () => {
 
+    const dispatch = useDispatch();
 
-     const products = useSelector( state => state.product  ) ;
+  const products = useSelector( state => state.product  ) ;
+
+
+  
+
+ 
+  // Added To The Cart Handler 
+  const handleAddToCart = (e , product)=> {
+   
+    e.stopPropagation()
+    e.preventDefault() ;
+    dispatch(addToCart(product));
+
+    Swal.fire({
+  title: "Added To The Cart Successfully ! ",
+  icon: "success",
+  draggable: true
+});
+  }
+
+
+  
     return (
         <div>
              <div className="bg-white py-16 px-4 md:px-12 lg:px-24">
@@ -41,7 +65,7 @@ const Shop = () => {
               </p>
 
               {/* Add to Cart Button */}
-  <div className="flex items-center justify-between w-full">
+ <div className="flex items-center justify-between w-full">
   {/* Fixed Golden Stars on the Left with minimal spacing */}
   <div className="flex items-center">
     {[...Array(5)].map((_, i) => (
@@ -59,7 +83,11 @@ const Shop = () => {
   </div>
 
   {/* Plus Button on the Right */}
-  <button className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg
+  <button 
+  
+  onClick={ (e)=> handleAddToCart(e, product)}
+  
+  className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg
                      hover:bg-red-700 transition duration-300 transform hover:scale-130 shadow-md">
     +
   </button>

@@ -4,6 +4,9 @@ import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import Shop from "./pages/Shop"
+import Cart from "./pages/Cart"
+import ContactPage from "./pages/ContactPage"
+import AboutPage from "./pages/AboutPage"
 
 function App() {
 
@@ -21,6 +24,9 @@ function App() {
     
      <Route  path="/" element={ <Home/>  }  >      </Route>
      <Route  path="/shop" element={ <Shop/> }  >   </Route>
+     <Route  path="/cart" element={ <Cart/> }  >   </Route>
+     <Route  path="/contact" element={ <ContactPage/>}  >   </Route>
+     <Route  path="/about" element={ <AboutPage/>}  >   </Route>
 
 
 

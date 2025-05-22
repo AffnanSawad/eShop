@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { setProducts } from "../redux/ProductSlice";
 import Shop from "./Shop";
 import { Link } from "react-router-dom";
+import { addToCart } from "../redux/CardSlice";
+import Swal from "sweetalert2";
 
 const Home = () => {
 
@@ -24,7 +26,20 @@ const Home = () => {
   
   [ ])
 
+ 
+  // Added To The Cart Handler 
+  const handleAddToCart = (e , product)=> {
+   
+    e.stopPropagation()
+    e.preventDefault() ;
+    dispatch(addToCart(product));
 
+    Swal.fire({
+     title: "Added To The Cart Successfully ! ",
+     icon: "success",
+     draggable: true
+   });
+  }
 
 
 
@@ -145,7 +160,11 @@ const Home = () => {
   </div>
 
   {/* Plus Button on the Right */}
-  <button className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg
+  <button 
+  
+  onClick={ (e)=> handleAddToCart(e, product)}
+  
+  className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg
                      hover:bg-red-700 transition duration-300 transform hover:scale-130 shadow-md">
     +
   </button>
