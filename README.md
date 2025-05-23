@@ -1,12 +1,52 @@
-# React + Vite
+# eShop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce web application built with React, Vite, Tailwind CSS, and Redux Toolkit.  
+eShop offers a smooth user experience for browsing products, managing the cart, and checking out seamlessly.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+[https://e-shop-opp6bvdsw-affnansawads-projects.vercel.app/](https://e-shop-opp6bvdsw-affnansawads-projects.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+- Responsive UI with Tailwind CSS  
+- Product listing with images, prices, and details  
+- Category-based browsing  
+- Cart management with Redux Toolkit  
+- Smooth animations with Framer Motion  
+- Sweetalert2 for user notifications  
+- SEO support using React Helmet Async  
+- Client-side routing with React Router DOM
+
+---
+
+## Tech Stack
+
+- React 19.x  
+- Vite  
+- Tailwind CSS  
+- Redux Toolkit  
+- React Router DOM  
+- Framer Motion  
+- Sweetalert2  
+- React Helmet Async  
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (>=16.x)  
+- npm or yarn
+
+### Installation
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/yourusername/eShop.git
+   cd eShop
