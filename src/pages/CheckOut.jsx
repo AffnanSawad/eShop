@@ -3,6 +3,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
 import { clearCart } from "../redux/CardSlice";
+import { Helmet } from "react-helmet";
 
 const CheckOut = () => {
   const cart = useSelector((state) => state.cart);
@@ -71,7 +72,12 @@ const CheckOut = () => {
 };
 
   return (
-    <motion.div
+  <div>
+
+    <Helmet>
+      <title> CheckOut </title>
+    </Helmet>
+      <motion.div
       className="min-h-screen bg-gray-100 p-4 md:p-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -181,6 +187,7 @@ const CheckOut = () => {
         </div>
       </motion.div>
     </motion.div>
+  </div>
   );
 };
 

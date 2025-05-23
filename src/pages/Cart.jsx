@@ -3,6 +3,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { deCreaseQuatity, inCreaseQuatity, removeFromCart } from "../redux/CardSlice";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -30,6 +31,13 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen p-4 md:p-8 bg-gray-50">
+
+       <Helmet>
+    <title>  My Cart </title>
+     
+     </Helmet>
+
+
       {cart.products.length > 0 ? (
         <div className="max-w-6xl mx-auto bg-white shadow-lg p-6 rounded-lg">
           <h3 className="text-2xl font-bold mb-6 border-b pb-2">SHOPPING CART</h3>

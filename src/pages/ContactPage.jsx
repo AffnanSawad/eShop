@@ -1,6 +1,7 @@
-
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import Swal from "sweetalert2";
 
 const inputVariants = {
   focused: { scale: 1.05, boxShadow: "0 0 8px rgba(59, 130, 246, 0.6)" },
@@ -13,6 +14,35 @@ const buttonVariants = {
 };
 
 export default function ContactPage() {
+ 
+ 
+ 
+  const handleMessage = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      Swal.fire({
+        icon: "error",
+        title: "Missing Fields",
+        text: "Please fill out all fields before submitting.",
+      });
+      return;
+    }
+
+    Swal.fire({
+      icon: "success",
+      title: "Submitted Successfully",
+      text: "Your request has been sent!",
+    });
+
+    form.reset(); 
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex flex-col items-center py-16 px-6 md:px-20">
       <motion.h1
@@ -24,6 +54,10 @@ export default function ContactPage() {
         Get In Touch
       </motion.h1>
 
+      <Helmet>
+        <title>eShop | Contact</title>
+      </Helmet>
+
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12">
         {/* Contact Form */}
         <motion.form
@@ -31,10 +65,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="bg-white p-8 rounded-xl shadow-lg"
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("Message sent!");
-          }}
+          onSubmit={handleMessage}
         >
           <div className="mb-6">
             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
@@ -125,7 +156,6 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-lg overflow-hidden shadow-lg h-64 bg-gray-200">
-            {/* Replace this div with your embedded Google Map iframe or map component */}
             <iframe
               title="Company Location"
               src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"

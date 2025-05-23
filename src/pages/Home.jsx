@@ -8,6 +8,7 @@ import Shop from "./Shop";
 import { Link } from "react-router-dom";
 import { addToCart } from "../redux/CardSlice";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
 
@@ -46,7 +47,16 @@ const Home = () => {
 
 
   return (
-    <div className="bg-gray-50 mt-4 px-4 md:px-16 lg:px-24"> {/* Adjusted background and margin-top */}
+    <div>
+
+  
+  <Helmet>
+    <title> eShop | Home </title>
+  </Helmet>
+
+
+   
+   <div className="bg-gray-50 mt-4 px-4 md:px-16 lg:px-24 "> {/* Adjusted background and margin-top */}
      
      
       <div className="container mx-auto py-10 flex flex-col md:flex-row md:space-x-10"> {/* Increased vertical padding and horizontal space */}
@@ -205,6 +215,12 @@ const Home = () => {
 
 
   
+    </div>
+
+
+  
+
+
     </div>
   );
 };

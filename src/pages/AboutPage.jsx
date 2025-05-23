@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const pageFade = {
   hidden: { opacity: 0 },
@@ -34,12 +35,28 @@ const cardHover = {
 
 export default function AboutEShop() {
   return (
+
+
+
+
+   <div>
+     
+
+      <Helmet>
+    <title>  About Us  </title>
+     
+     </Helmet>
     <motion.section
       initial="hidden"
       animate="visible"
       variants={pageFade}
       className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-indigo-50 flex flex-col items-center py-16 px-6 md:px-16"
     >
+    
+       
+
+
+
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -134,5 +151,9 @@ export default function AboutEShop() {
         </motion.div>
       </motion.div>
     </motion.section>
+
+
+
+   </div>
   );
 }

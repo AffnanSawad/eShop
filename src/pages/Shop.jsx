@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/CardSlice";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const Shop = () => {
@@ -31,6 +32,13 @@ const Shop = () => {
   
     return (
         <div>
+
+         <Helmet>
+    <title>  Shop </title>
+     
+     </Helmet>
+
+
              <div className="bg-white py-16 px-4 md:px-12 lg:px-24">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 tracking-tight">
