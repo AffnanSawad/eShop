@@ -8,7 +8,7 @@ eShop offers a smooth user experience for browsing products, managing the cart, 
 
 ## 🚀 Live Demo
 
-[https://e-shop-9rvh0qu3a-affnansawads-projects.vercel.app/](https://e-shop-9rvh0qu3a-affnansawads-projects.vercel.app/)
+[https://e-shop-bd-25.netlify.app/]([https://e-shop-9rvh0qu3a-affnansawads-projects.vercel.app/](https://e-shop-bd-25.netlify.app/))
 
 ---
 
