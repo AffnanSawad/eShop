@@ -10,7 +10,7 @@ import AboutPage from "./pages/AboutPage"
 import FilterData from "./pages/FilterData"
 import CheckOut from "./pages/CheckOut"
 import LoginPage from "./pages/LoginPage"
-import SignUpPage from "./pages/SignUpPage"
+
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
      <Route  path="/filter-Data" element={  <FilterData/>}  >   </Route>
      <Route  path="/checkout" element={ <CheckOut/> }  >   </Route>
      <Route  path="/login" element={<LoginPage/>}  >   </Route>
-     <Route  path="/signup" element={<SignUpPage/> }  >   </Route>
+   
 
 
 
