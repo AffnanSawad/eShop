@@ -1,9 +1,13 @@
 import React from 'react';
 import { categoryCardsData } from '../assets/categoryCardsDara'; // Ensure this path and filename are correct
+import { Link } from 'react-router-dom';
 
 const CategorySection = () => {
   return (
     <div className="bg-gray-50 py-16 px-4 md:px-12 lg:px-24"> {/* Softer background, increased padding */}
+     <Link to="/shop">
+     
+     
       <div className="container mx-auto">
         {/* Optional: Section Title */}
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 tracking-tight">
@@ -51,6 +55,10 @@ const CategorySection = () => {
           ))}
         </div>
       </div>
+     
+     
+     
+     </Link>
     </div>
   );
 };

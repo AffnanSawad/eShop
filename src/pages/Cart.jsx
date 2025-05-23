@@ -2,10 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { deCreaseQuatity, inCreaseQuatity, removeFromCart } from "../redux/CardSlice";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   // Handler with confirmation before removing
   const handleRemove = (id) => {
@@ -109,7 +112,10 @@ const Cart = () => {
                 </span>
               </p>
 
-              <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded">
+              <button
+              
+              onClick={()=> navigate('/checkout')}
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded">
                 Proceed to Checkout
               </button>
             </div>

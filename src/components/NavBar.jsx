@@ -1,10 +1,26 @@
 import { FaSearch, FaShoppingCart, FaUser, FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../redux/ProductSlice";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [search , setSearch] = useState();
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate()
+
+  const handleSearch = (e)=>{
+
+    e.preventDefault();
+
+    dispatch( setSearchTerm(search));
+
+    navigate("/filter-Data")
+  }
 
 //   REDUX THEKE SELECTED PRODUCT NIYE ASHA ;
   const products = useSelector(state => state.cart.products)
@@ -25,11 +41,11 @@ const NavBar = () => {
         </div>
 
         {/* Search Bar */}
-        <form className="hidden md:flex items-center border border-gray-300 rounded-md px-3 py-1 w-full md:w-1/2">
+        <form onSubmit={handleSearch} className="hidden md:flex items-center border border-gray-300 rounded-md px-3 py-1 w-full md:w-1/2">
           <input
             type="text"
             placeholder="Search product"
-            className="flex-grow outline-none px-2 py-1 text-sm"
+            className="flex-grow outline-none px-2 py-1 text-sm" onChange={(e)=> setSearch(e.target.value)}
           />
           <button type="submit">
             <FaSearch className="text-gray-500 hover:text-blue-500" />

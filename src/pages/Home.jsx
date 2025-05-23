@@ -47,12 +47,19 @@ const Home = () => {
 
   return (
     <div className="bg-gray-50 mt-4 px-4 md:px-16 lg:px-24"> {/* Adjusted background and margin-top */}
+     
+     
       <div className="container mx-auto py-10 flex flex-col md:flex-row md:space-x-10"> {/* Increased vertical padding and horizontal space */}
         {/* Categories Section */}
+        
+        
         <div className="w-full md:w-3/12 mb-8 md:mb-0">
           <div className="bg-red-700 text-white text-xl font-bold py-4 px-5 rounded-t-xl shadow-lg"> {/* Darker red, larger text, more padding, rounded corners */}
             Shop By Categories
           </div>
+          
+          <Link to="/shop">
+
           <ul className="space-y-4 bg-white p-6 border border-gray-200 rounded-b-xl shadow-md"> {/* White background, increased padding, rounded corners */}
             {Catagories.map((catagory, index) => (
               <li
@@ -64,7 +71,11 @@ const Home = () => {
               </li>
             ))}
           </ul>
+          
+          </Link>
         </div>
+        
+       
 
         {/* Hero Section */}
         <div className="w-full md:w-9/12 h-[30rem] relative rounded-xl overflow-hidden shadow-xl group"> {/* Taller height, more rounded corners */}
@@ -102,6 +113,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+     
+    
 
     <InfoSection></InfoSection>
     <CategorySection></CategorySection>

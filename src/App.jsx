@@ -7,6 +7,8 @@ import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
 import ContactPage from "./pages/ContactPage"
 import AboutPage from "./pages/AboutPage"
+import FilterData from "./pages/FilterData"
+import CheckOut from "./pages/CheckOut"
 
 function App() {
 
@@ -27,6 +29,8 @@ function App() {
      <Route  path="/cart" element={ <Cart/> }  >   </Route>
      <Route  path="/contact" element={ <ContactPage/>}  >   </Route>
      <Route  path="/about" element={ <AboutPage/>}  >   </Route>
+     <Route  path="/filter-Data" element={  <FilterData/>}  >   </Route>
+     <Route  path="/checkout" element={ <CheckOut/> }  >   </Route>
 
 
 
