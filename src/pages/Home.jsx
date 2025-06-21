@@ -16,6 +16,11 @@ const Home = () => {
   
   const dispatch = useDispatch();
 
+// useSelector is a hook provided by react-redux.
+// It allows your component to read data from the Redux store.
+
+  // state => state.product is a selector function that says:
+// “From the entire Redux store state, I want the product slice.”
   const products = useSelector( state => state.product  ) ;
 
 
@@ -50,13 +55,15 @@ const Home = () => {
     <div>
 
   
-  <Helmet>
-    <title> eShop | Home </title>
-  </Helmet>
+ 
 
 
    
    <div className="bg-gray-50 mt-4 px-4 md:px-16 lg:px-24 "> {/* Adjusted background and margin-top */}
+       
+           <Helmet>
+    <title>  Home </title>
+  </Helmet>
      
      
       <div className="container mx-auto py-10 flex flex-col md:flex-row md:space-x-10"> {/* Increased vertical padding and horizontal space */}
